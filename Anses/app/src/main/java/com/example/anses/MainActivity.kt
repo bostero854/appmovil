@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Face
@@ -19,6 +20,7 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
@@ -47,23 +49,41 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     var clave = ""
-    Column(modifier = Modifier.fillMaxSize()) {
-        Text(text = "Hola guapo $name!", fontSize = 16.sp)
-        Row(modifier = Modifier.border(2.dp, color = Color.Red)) {
+    Column(modifier = Modifier
+        .fillMaxSize()
+        .padding(vertical = 10.dp)
+    ) {
+        Text(text = "Hola guapo $name!",
+            fontSize = 16.sp,
+            modifier = Modifier.padding(bottom =  10.dp)
+            )
+        Row(
+                modifier = Modifier.fillMaxWidth()
+        ) {
             Spacer(modifier = Modifier.weight(1F))
             Text(text = "Ingresar a tu cuenta", fontSize = 12.sp)
             Spacer(modifier = Modifier.weight(1F))
             Text(text = "Cambiar usuario", fontSize = 12.sp)
             Spacer(modifier = Modifier.weight(1F))
         }
-        TextField(value = clave, onValueChange = {})
-        Button(onClick = { /*TODO*/ }) {
+        TextField(
+            value = clave,
+            onValueChange = {},
+            modifier = Modifier
+                .padding(vertical = 10.dp)
+                .fillMaxWidth()
+        )
+        Button(
+            modifier = Modifier.align(Alignment.CenterHorizontally),
+            onClick = { /*TODO*/ }) {
             Text(text = "Ingresar")
         }
-
-        Text(text = "Olvide mi clave")
+        //Ver minuto 1:43
+        Text(modifier = Modifier.align(Alignment.CenterHorizontally),
+            text = "Olvide mi clave")
         Divider()
-        Text(text = "O usa tu huella digital")
+        Text(modifier = Modifier.align(Alignment.CenterHorizontally),
+                text = "O usa tu huella digital")
         IconButton(onClick = { /*TODO*/ }) {
             Icon(imageVector =  Icons.Default.Face, contentDescription ="" )
         }
