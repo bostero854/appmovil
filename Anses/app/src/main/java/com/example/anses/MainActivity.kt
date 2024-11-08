@@ -9,7 +9,9 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Face
 import androidx.compose.material3.Button
@@ -63,7 +65,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             Spacer(modifier = Modifier.weight(1F))
             Text(text = "Ingresar a tu cuenta", fontSize = 12.sp)
             Spacer(modifier = Modifier.weight(1F))
-            Text(text = "Cambiar usuario", fontSize = 12.sp)
+            Text(text = "Cambiar usuario", fontSize = 12.sp, maxLines = 1)
             Spacer(modifier = Modifier.weight(1F))
         }
         TextField(
@@ -71,6 +73,8 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             onValueChange = {},
             modifier = Modifier
                 .padding(vertical = 10.dp)
+                //.width(200.dp)
+                //.align(Alignment.CenterHorizontally)
                 .fillMaxWidth()
         )
         Button(
@@ -78,15 +82,26 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
             onClick = { /*TODO*/ }) {
             Text(text = "Ingresar")
         }
-        //Ver minuto 1:43
-        Text(modifier = Modifier.align(Alignment.CenterHorizontally),
-            text = "Olvide mi clave")
+        //Ver minuto 1:51
+        Spacer(modifier = Modifier.weight(1f))
+        Text(modifier = Modifier
+            .align(Alignment.CenterHorizontally),
+            //.padding(vertical = 40.dp),
+            text = "Olvide mi clave",
+            fontSize = 12.sp)
         Divider()
-        Text(modifier = Modifier.align(Alignment.CenterHorizontally),
-                text = "O usa tu huella digital")
-        IconButton(onClick = { /*TODO*/ }) {
-            Icon(imageVector =  Icons.Default.Face, contentDescription ="" )
+        Spacer(modifier = Modifier.weight(1f))
+        Text(
+                modifier = Modifier.align(Alignment.CenterHorizontally),
+                text = "O usa tu huella digital",
+                fontSize = 16.sp)
+        Spacer(modifier = Modifier.weight(1f))
+        IconButton(
+            modifier = Modifier.align(Alignment.CenterHorizontally) ,
+            onClick = { /*TODO*/ }) {
+            Icon(imageVector =  Icons.Filled.Face, contentDescription ="" )
         }
+        Spacer(modifier = Modifier.weight(3f))
     }
 
 }
