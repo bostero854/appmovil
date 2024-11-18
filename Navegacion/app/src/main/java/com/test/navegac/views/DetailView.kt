@@ -1,5 +1,6 @@
 package com.test.navegac.views
 
+import android.R
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -24,7 +25,7 @@ import com.test.navegac.components.TitleView
 @OptIn(ExperimentalMaterial3Api::class)
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @Composable
-fun DetailView(navController: NavController, id:Int){
+fun DetailView(navController: NavController, id:Int, opcional: String?){
     Scaffold(
         topBar = {
             TopAppBar(
@@ -38,18 +39,18 @@ fun DetailView(navController: NavController, id:Int){
             )
         }
     ) {
-        ContentDetaillView(navController, id)
+        ContentDetaillView(navController, id,opcional)
     }
 }
 @Composable
-fun ContentDetaillView(navController: NavController, id:Int){
+fun ContentDetaillView(navController: NavController, id:Int, opcional: String?){
     Column(modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally) {
 
         TitleView("Home View")
         Space()
-        TitleView(id.toString())
+        TitleView(id.toString() + opcional)
         Space()
         MainButton(name = "Return Home", backColor = Color.Blue, color = Color.White) {
             println("Soy un pix")
