@@ -28,7 +28,6 @@ import com.test.descuentosapp.components.SpaceH
 import com.test.descuentosapp.components.TwoCards
 
 
-
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun HomeView() {
@@ -106,5 +105,8 @@ fun calcularDescuento(precio:Double, descuento:Double): Double {
     val res = precio * ( 1 - descuento /100 )
     return kotlin.math.round(res * 100) /100.0
 }
+
+
+
 
 

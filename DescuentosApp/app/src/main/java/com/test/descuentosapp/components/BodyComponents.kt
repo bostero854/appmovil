@@ -18,23 +18,22 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.ExperimentalMaterial3Api
 
 
 @Composable
-fun SpaceH(size: Dp = 5.dp){
-    Spacer(
-        modifier = Modifier.height(size)
-    )
+fun SpaceH(size: Dp = 5.dp) {
+    Spacer(modifier = Modifier.height(size))
 }
 
 @Composable
-fun SpaceW(size: Dp = 5.dp){
-    Spacer(
-        modifier = Modifier.width(size)
-    )
+fun SpaceW(size: Dp = 5.dp) {
+    Spacer(modifier = Modifier.width(size))
 }
+
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun MainTextField(value: String, onValueChange: (String) -> Unit, label:String){
+fun MainTextField(value: String, onValueChange: (String) -> Unit, label: String) {
     OutlinedTextField(
         value = value,
         onValueChange = onValueChange,
@@ -47,14 +46,20 @@ fun MainTextField(value: String, onValueChange: (String) -> Unit, label:String){
 }
 
 @Composable
-fun MainButton(text: String, color: Color= MaterialTheme.colorScheme.primary, onClick:()-> Unit){
-    OutlinedButton(onClick=onClick, colors = ButtonDefaults.outlinedButtonColors(
-        contentColor = color,
-        containerColor = Color.Transparent
-    ),
-    modifier = Modifier
-        .fillMaxWidth()
-        .padding(30.dp)) {
+fun MainButton(
+    text: String,
+    color: Color = MaterialTheme.colorScheme.primary,
+    onClick: () -> Unit
+) {
+    OutlinedButton(
+        onClick = onClick, colors = ButtonDefaults.outlinedButtonColors(
+            contentColor = color,
+            containerColor = Color.Transparent
+        ),
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(horizontal = 30.dp)
+    ) {
         Text(text = text)
     }
 }
@@ -64,17 +69,19 @@ fun Alert(
     title: String,
     message: String,
     confirmText: String,
-    onConfirmClik:() -> Unit,
-    onDismissClick:() -> Unit
+    onConfirmClick: () -> Unit,
+    onDismissClick: () -> Unit
 ) {
     AlertDialog(
         onDismissRequest = onDismissClick,
         title = { Text(text = title) },
         text = { Text(text = message) },
         confirmButton = {
-            Button(onClick = { onConfirmClik() }) {
+            Button(onClick = { onConfirmClick()}) {
                 Text(text = confirmText)
             }
         }
     )
 }
+
+
