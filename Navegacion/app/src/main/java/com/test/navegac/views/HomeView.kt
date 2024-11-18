@@ -60,7 +60,7 @@ fun ContentHomeView(navController: NavController){
         TextField(value = opcional, onValueChange = {opcional = it}, label = { Text("Prueba") })
 
         MainButton(name = "Detail view", backColor = Color.Red, color = Color.White) {
-            navController.navigate(route = "Detail/${id}/opcional")
+            navController.navigate("Detail/${id}/?${opcional}")
             println("Soy un pix")
         }
     }
