@@ -26,13 +26,13 @@ fun Contador(viewModel: ContadorViewModel) {
         modifier = Modifier.fillMaxSize()
     ) {
         Text(
-            text = "0",
+            text = viewModel.contador.value.toString(),
             fontWeight = FontWeight.Bold,
             fontSize = 40.sp
         )
 
         FloatingActionButton(
-            onClick = {},
+            onClick = {viewModel.add()},
             modifier = Modifier
                 .align(Alignment.BottomEnd)
                 .padding(15.dp)

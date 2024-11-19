@@ -12,20 +12,25 @@ import androidx.compose.ui.Modifier
 import androidx.lifecycle.ViewModel
 import com.test.loteria.ui.theme.LoteriaTheme
 import com.test.loteria.viewModels.ContadorViewModel
+import com.test.loteria.viewModels.LoteriaViewModel
 import com.test.loteria.views.Contador
+import com.test.loteria.views.LoteriaView
+
 //import androidx.activity.viewModels
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val viewModel: ContadorViewModel by viewModels()
+        //val viewModel: ContadorViewModel by viewModels()
+        val viewModel: LoteriaViewModel by viewModels()
        setContent {
             LoteriaTheme {
                 Surface(
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Contador(viewModel)
+                    //Contador(viewModel = viewModel)
+                    LoteriaView(viewModel = viewModel)
                 }
             }
         }
