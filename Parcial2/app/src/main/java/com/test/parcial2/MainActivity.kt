@@ -8,10 +8,7 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -19,14 +16,15 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import androidx.navigation.NavType
 import com.test.parcial2.Clima.WeatherScreen
-import com.test.parcial2.ui.theme.MiClimaParcialTheme
 import com.test.parcial2.router.Enrutador
 import com.test.parcial2.router.Router
 import com.test.parcial2.router.Ruta
-import com.test.parcial2.screens.CityScreen
+import com.test.parcial2.Cuidades.CityScreen
 import androidx.core.app.ActivityCompat
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
+import com.test.parcial2.Clima.UserPreferences
+import com.test.parcial2.ui.theme.Parcial2Theme
 
 class MainActivity : ComponentActivity() {
 
@@ -53,7 +51,7 @@ class MainActivity : ComponentActivity() {
         val favoriteCity = UserPreferences.getFavoriteCity(this)
 
         setContent {
-            MiClimaParcialTheme {
+            Parcial2Theme {
                 navController = rememberNavController()
                 router = Enrutador(navController)
 

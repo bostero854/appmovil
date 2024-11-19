@@ -2,7 +2,7 @@ package com.test.parcial2.Repositorio
 
 import android.util.Log
 import com.test.parcial2.ApiConfig
-import com.test.parcial2.api.WeeklyForecastResponse
+import com.test.parcial2.WeeklyForecastResponse
 import io.ktor.client.*
 import io.ktor.client.engine.android.*
 import io.ktor.client.request.*
