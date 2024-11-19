@@ -1,5 +1,7 @@
 package com.test.parcial2.router
 
+import androidx.navigation.NavHostController
+
 interface Router {
     fun navegar(ruta: Ruta)
 }

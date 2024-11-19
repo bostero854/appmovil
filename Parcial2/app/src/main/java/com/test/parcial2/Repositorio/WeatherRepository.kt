@@ -1,9 +1,19 @@
 package com.test.parcial2.Repositorio
 
 import android.util.Log
+import com.test.parcial2.ApiConfig
+import com.test.parcial2.api.WeeklyForecastResponse
+import io.ktor.client.*
+import io.ktor.client.engine.android.*
+import io.ktor.client.request.*
+import io.ktor.client.plugins.contentnegotiation.*
+import io.ktor.client.statement.HttpResponse
+import io.ktor.client.statement.bodyAsText
+import io.ktor.serialization.kotlinx.json.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-
+import kotlinx.serialization.json.Json
+import kotlinx.serialization.Serializable
 
 object WeatherRepository {
 
@@ -170,3 +180,4 @@ data class Sys(
 data class Wind(
     val speed: Float
 )
+

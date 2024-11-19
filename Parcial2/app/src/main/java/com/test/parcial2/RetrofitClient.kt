@@ -1,4 +1,6 @@
 package com.test.parcial2
+import retrofit2.Retrofit
+import retrofit2.converter.gson.GsonConverterFactory
 
 object RetrofitClient {
 
