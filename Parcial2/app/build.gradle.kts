@@ -47,7 +47,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.ktor.client.android)
     implementation(libs.ktor.client.content.negotiation)
     implementation(libs.ktor.serialization.kotlinx.json)
@@ -81,4 +80,5 @@ dependencies {
     testImplementation("io.mockk:mockk:1.13.5")
     testImplementation("org.mockito:mockito-core:5.4.0")
     testImplementation("org.mockito.kotlin:mockito-kotlin:5.0.0")
+
 }
